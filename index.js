@@ -35,7 +35,7 @@ const server = app.listen(process.env.PORT, () => {
 
 const io = socket(server, {
   cors: {
-    origin: "https://conversachat.netlify.app/",
+    origin: "https://localhost:3000",
     Credentials: true,
   },
 });
