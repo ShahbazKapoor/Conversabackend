@@ -14,8 +14,6 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname + "/public")));
-
 app.use("/api/auth", userRoutes);
 app.use("/api/messages", messageRoute);
 
@@ -37,7 +35,7 @@ const server = app.listen(process.env.PORT, () => {
 
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://conversachat.netlify.app/",
     Credentials: true,
   },
 });
